@@ -7,25 +7,9 @@
     p 空
     p 影
     p 展
-  .container
-    h2.home_title 最新消息
-    hr
-    b-row
-      b-col(cols='12' md='6' v-for="neww in news" :key='neww._id' :to='"/neww/" + neww._id')
-
-    h2.home_title 新片推薦
-    hr
-  .row.p-3
-    b-col.p-0(cols='12' md='6' v-for="(movie, index) in movies" :key='movie._id' :to='"/movie/" + movie._id')
-      b-card.card-st(overlay='',
-      :img-src='movie.image',
-      img-alt='Card Image',
-      text-variant='white',
-      :title='movie.name',
-      :sub-title='movie.director'
-      :to='"/movie/" + movie._id',
-      )
-        router-link(:to='"/movie/" + movie._id') 查看詳情
+  .floattop
+    .self_title 關於影展
+    p 影展是個在特定時間內播映多部電影的組織性活動，多半在一個城市或區域內的電影院及其映演空間進行，但近期也有越來越多的室外演出。 根據影展主題的不同，播映電影的年代、授權區域等都可以十分多元化，而也有的影展關注焦點是某位導演、某種具體風格，有的關注某一主題。
 
 </template>
 
@@ -33,8 +17,8 @@
 export default {
   data () {
     return {
-      movies: [],
-      news: []
+      movies: []
+      // letters: []
     }
   },
 

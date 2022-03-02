@@ -1,12 +1,25 @@
 <template lang="pug">
 div#movies
   b-carousel#carousel-1(v-model='slide', :interval='4000', controls='', indicators='', background='#ababab', img-width='1024', img-height='480', style='text-shadow: 1px 1px 2px #333;', @sliding-start='onSlideStart', @sliding-end='onSlideEnd')
-    b-carousel-slide(img-src='https://picsum.photos/1024/480/?image=58')
-      h2 天晴有時 Whether the Weather Is Fine
+    b-carousel-slide(img-src='../assets/img/1024480_1.jpg')
+      h3.bannerword
+        | 天晴有時
+        br
+        | Whether the Weather Is Fine
+    b-carousel-slide(img-src='../assets/img/1024480_2.jpg')
+      h3.bannerword
+        | 我們與天空之間
+        br
+        | The Distance between us and the Sky
+    b-carousel-slide(img-src='../assets/img/1024480_3.jpg')
+      h3.bannerword
+        | 在我和天空之間
+        br
+        | Living in the Sky
 
-  b-container.pt-5
+  b-container.py-5
     b-row
-      b-col(cols='12' md='6' v-for='movie in movies' :key='movie._id')
+      b-col(cols='12' md='6' lg="4" v-for='movie in movies' :key='movie._id')
         MovieCard(:movie='movie')
 </template>
 

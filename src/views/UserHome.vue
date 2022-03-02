@@ -1,3 +1,5 @@
 <template lang="pug">
-h3.text-center.mt-5 管理項目
+#userhome
+  .self_title 管理項目
+  .pushfooter
 </template>

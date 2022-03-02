@@ -1,10 +1,11 @@
 <template>
   <div class="moviecard">
-    <img class="mcard_img" :src="movie.image" style="width:100%; height:300px" >
-      <router-link :to='"/movie/" + movie._id'>
-        <h3> {{ movie.name }}</h3>
-      </router-link>
-    <p>導演 | {{ movie.director }}</p>
+    <router-link :to='"/movie/" + movie._id'>
+      <img class="mcard_img" :src="movie.image" style="width:100%; height:300px" >
+          <h3> {{ movie.name }}</h3>
+      <p>導演 | {{ movie.director }}</p>
+    </router-link>
+
   </div>
 </template>
 

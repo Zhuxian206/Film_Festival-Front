@@ -17,6 +17,10 @@ b-container#movie
           p.mb-2.director_dec 導演簡介
           | {{ director }}
         p {{ directorDesc }}
+    .cartzone
+      p.mt-3.mx-2.director_name 預約觀看
+      b-form-input.w-25(type='number' v-model.number='quantity' :state='quantityState' min='0')
+      b-btn.m-1(variant='dark' @click='addCart') 加入預約清單
 </template>
 <script>
 export default {
@@ -28,7 +32,17 @@ export default {
       director: '',
       directorDesc: '',
       upState: false,
-      booking: ''
+      quantity: 0
+    }
+  },
+  methods: {
+    addCart () {
+      this.$store.dispatch('user/addCart', { movie: this.$route.params.id, quantity: this.quantity })
+    }
+  },
+  computed: {
+    quantityState () {
+      return this.quantity === 0 ? null : this.quantity > 0
     }
   },
   async created () {
@@ -41,8 +55,6 @@ export default {
       this.director = data.result.director
       this.directorDesc = data.result.directorDesc
       this.upState = data.result.upState
-      this.booking = data.result.booking
-
       document.title = `${this.name} | 天空影展`
     } catch (error) {
       this.$router.push('/')

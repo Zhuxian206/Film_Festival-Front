@@ -1,3 +1,40 @@
 <template lang="pug">
-h3.text-center.mt-5 歷史訂單
+b-container#userorders
+  b-table.pushfooter(:items="orders" :fields='fields')
+    template(#cell(date)='data')
+      | {{ new Date(data.item.date).toLocaleString('zh-tw') }}
+    template(#cell(movies)='data')
+      ul
+        li(v-for='movie in data.item.movies' :key='movie._id') {{ movie.movie.name }} x {{ movie.quantity }}
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      orders: [],
+      fields: [
+        { key: '_id', label: '單號' },
+        { key: 'date', label: '日期' },
+        { key: 'movies', label: '商品' }
+      ]
+    }
+  },
+  async created () {
+    try {
+      const { data } = await this.api.get('/orders/me', {
+        headers: {
+          authorization: 'Bearer ' + this.user.token
+        }
+      })
+      this.orders = data.result
+    } catch (error) {
+      this.$swal({
+        icon: 'error',
+        title: '失敗',
+        text: '取得訂單失敗'
+      })
+    }
+  }
+}
+</script>

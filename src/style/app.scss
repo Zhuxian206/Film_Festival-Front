@@ -3,8 +3,18 @@
     font-weight: 800;
   }
   .main_footer{
+    position: relative;
     height: 200px;
-    background: rgb(131, 131, 131);
-    color: #ffffff;
+    background: rgb(68, 68, 68);
+    color: #b9b9b9;
+    .copyr{
+      font-family: 'Noto Sans TC', sans-serif;
+    color: #979797;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    }
   }
+
 }

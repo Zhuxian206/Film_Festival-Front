@@ -2,7 +2,7 @@
 b-container#register
   b-row
     b-col(cols='12')
-      h1.text-center 註冊
+      h1.text-center.self_title 註冊
     b-col(cols='12')
       b-form(@submit.prevent="register")
         b-form-group(label='帳號' label-for='input-account' description='帳號長度為 4 到 20 個字' :state="state.account" invalid-feedback="帳號格式不正確")
@@ -12,7 +12,8 @@ b-container#register
         b-form-group(label='信箱' label-for='input-email' description='請輸入有效的信箱' :state="state.email" invalid-feedback="信箱格式不正確")
           b-form-input#input-email(v-model="form.email" required placeholder='請輸入信箱' type='text' :state="state.email")
         .text-center
-          b-btn.mx-1(variant='success' type='submit') 註冊
+          b-btn.mx-1(variant='dark' type='submit') 註冊
+  .pushfooter
 </template>
 
 <script>

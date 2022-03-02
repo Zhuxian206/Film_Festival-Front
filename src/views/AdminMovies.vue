@@ -1,6 +1,5 @@
 <template lang="pug">
 #adminmovie
-  b-btn.my-3(variant='dark' v-b-modal.modal-movie) 新增
   b-table(:items="movies" :fields='fields' ref='table')
     template(#cell(image)='data')
       img(v-if='data.item.image' :src='data.item.image' style='height: 50px')
@@ -12,9 +11,9 @@
   b-modal#modal-movie(
     :title="form._id.length > 0 ? '編輯影片' : '新增影片'"
     centered
-    ok-variant='success'
+    ok-variant='secondary'
     ok-title='送出'
-    cancel-variant='danger'
+    cancel-variant='dark'
     cancel-title='取消'
     @ok="submitModal"
     @hidden="resetForm"
@@ -92,6 +91,7 @@
       :max-size="1024"
       exceed-size-text="檔案大小不能超過"
     )
+  b-btn.my-3.w-25.rounded-pill(variant='dark' v-b-modal.modal-movie) 新增片單
 </template>
 
 <script>

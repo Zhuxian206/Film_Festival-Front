@@ -1,4 +1,5 @@
 #home{
+  height: 1200px;
   background: $bgcolor;
   video{
     height: 800px;
@@ -20,9 +21,47 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    p{
+      font-size: 2rem;
+      @include sm {
+        font-size: 2.5rem;
+      }
+      @include sm {
+        font-size: 4rem;
+      }
+    }
   }
   .home_title{
     color: $themewordcolor;
   }
-
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .floattop{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    top:900px;
+    p{
+      color: rgb(78, 78, 78);
+      font-family: 'Noto Sans TC', sans-serif;
+      margin-top: 20px;
+      text-align: center;
+      width: 90vw;
+      @include sm {
+        width: 80vw;
+      }
+      @include sm {
+        width: 70vw;
+      }
+    }
+  }
+  .link-dis{
+    color: rgb(78, 78, 78) !important;
+  }
 }

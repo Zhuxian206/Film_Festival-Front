@@ -62,72 +62,22 @@ const routes = [
   //     title: '場次 | 天空影展'
   //   }
   // },
-  {
-    path: '/newsPage',
-    name: 'NewsPage',
-    component: () => import(/* webpackChunkName: "news" */ '../views/NewsPage.vue'),
-    meta: {
-      title: '最新消息 | 天空影展'
-    },
-    children: [
-      {
-        path: '',
-        name: 'NewsHome',
-        component: () => import(/* webpackChunkName: "news" */ '../views/NewsHome.vue'),
-        meta: {
-          title: '消息中心 | 天空影展'
-        }
-      },
-      {
-        path: 'all',
-        name: 'NewsAll',
-        component: () => import(/* webpackChunkName: "news" */ '../views/NewsAll.vue'),
-        meta: {
-          title: '新聞 | 天空影展'
-        }
-      },
-      {
-        path: 'news',
-        name: 'NewsNews',
-        component: () => import(/* webpackChunkName: "news" */ '../views/NewsNews.vue'),
-        meta: {
-          title: '新聞 | 天空影展'
-        }
-      },
-      {
-        path: 'announcement',
-        name: 'NewsAnnouncement',
-        component: () => import(/* webpackChunkName: "news" */ '../views/NewsAnnouncement.vue'),
-        meta: {
-          title: '公告 | 天空影展'
-        }
-      },
-      {
-        path: 'promote',
-        name: 'NewsPromote',
-        component: () => import(/* webpackChunkName: "news" */ '../views/NewsPromote.vue'),
-        meta: {
-          title: '推廣 | 天空影展'
-        }
-      },
-      {
-        path: 'other',
-        name: 'NewsOther',
-        component: () => import(/* webpackChunkName: "news" */ '../views/NewsOther.vue'),
-        meta: {
-          title: '其他 | 天空影展'
-        }
-      }
-    ]
-  },
-  {
-    path: '/new/:id',
-    name: 'New',
-    component: () => import(/* webpackChunkName: "new" */ '../views/New.vue'),
-    meta: {
-      title: '消息內容 | 天空影展'
-    }
-  },
+  // {
+  //   path: '/lettersPage',
+  //   name: 'LettersPage',
+  //   component: () => import(/* webpackChunkName: "Letters" */ '../views/LettersPage.vue'),
+  //   meta: {
+  //     title: '最新消息 | 天空影展'
+  //   }
+  // },
+  // {
+  //   path: '/letter/:id',
+  //   name: 'Letter',
+  //   component: () => import(/* webpackChunkName: "Letter" */ '../views/Letter.vue'),
+  //   meta: {
+  //     title: '消息內容 | 天空影展'
+  //   }
+  // },
   {
     path: '/register',
     name: 'Register',
@@ -142,6 +92,15 @@ const routes = [
     component: () => import(/* webpackChunkName: "login" */ '../views/Login.vue'),
     meta: {
       title: '登入 | 天空影展'
+    }
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: () => import(/* webpackChunkName: "cart" */ '../views/Cart.vue'),
+    meta: {
+      title: '預約清單 | 天空影展',
+      login: true
     }
   },
   // 管理員 -------------------------------------
@@ -181,16 +140,16 @@ const routes = [
           title: '片單管理 | 天空影展'
         }
       },
-      {
-        path: 'news',
-        name: 'AdminNews',
-        component: () => import(/* webpackChunkName: "admin" */ '../views/AdminNews.vue'),
-        meta: {
-          login: true,
-          admin: true,
-          title: '消息管理 | 天空影展'
-        }
-      },
+      // {
+      //   path: 'letter',
+      //   name: 'AdminLetters',
+      //   component: () => import(/* webpackChunkName: "admin" */ '../views/AdminLetters.vue'),
+      //   meta: {
+      //     login: true,
+      //     admin: true,
+      //     title: '消息管理 | 天空影展'
+      //   }
+      // },
       {
         path: 'orders',
         name: 'AdminOrders',

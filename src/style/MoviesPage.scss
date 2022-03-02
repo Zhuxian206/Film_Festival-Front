@@ -1,4 +1,25 @@
 #movies{
+  position: relative;
+  .bannerword{
+    position: absolute;
+    bottom: 100%;
+    left: -8%;
+    font-size: 1rem;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.801);
+    background-color: rgba( 0, 0, 0, 0.25);
+    padding: 10px 20px;
+    border-radius: 10px;
 
+    @include sm {
+      font-size: 1.5rem;
+      bottom: 150%;
+
+    }
+    @include md {
+      font-size: 2rem;
+      bottom: 192%;
+    }
+  }
 
   }

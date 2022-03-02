@@ -1,4 +1,17 @@
 .moviecard{
+  &:hover{
+    border: 5px solid rgb(39, 39, 39);
+    background: rgb(39, 39, 39);
+  }
+  b-container{
+    margin-top: 50px;
+  }
+  img{
+    object-fit: cover;
+  }
+  a{
+    text-decoration: none;
+  }
   border: 1px solid rgb(93, 93, 93);
   border-radius: 13px;
   margin-bottom: 20px;
@@ -16,8 +29,4 @@
   p{
     color: #fff;
   }
-  // .mcard_img{
-  //   border-top-left-radius: 10px;
-  //   border-top-right-radius: 10px;
-  // }
 }
