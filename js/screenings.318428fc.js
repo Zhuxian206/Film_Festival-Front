@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["screenings"],{"279d":function(n,e,t){"use strict";t.r(e);var s=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",{attrs:{id:"Screenings"}},[n._v("本季場次")])},r=[],c=t("2877"),i={},l=Object(c["a"])(i,s,r,!1,null,null,null);e["default"]=l.exports}}]);
+//# sourceMappingURL=screenings.318428fc.js.map
